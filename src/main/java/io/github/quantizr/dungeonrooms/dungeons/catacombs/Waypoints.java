@@ -25,6 +25,7 @@ import io.github.quantizr.dungeonrooms.events.PacketEvent;
 import io.github.quantizr.dungeonrooms.utils.MapUtils;
 import io.github.quantizr.dungeonrooms.utils.Utils;
 import io.github.quantizr.dungeonrooms.utils.WaypointUtils;
+import io.github.quantizr.dungeonrooms.handlers.ConfigHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -116,42 +117,52 @@ public class Waypoints {
                 switch (secretsObject.get("category").getAsString()) {
                     case "entrance":
                         if (!showEntrance) continue;
-                        color = new Color(0, 255, 0);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "enterance"));
                         break;
                     case "superboom":
                         if (!showSuperboom) continue;
-                        color = new Color(255, 0, 0);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "superboom"));
                         break;
                     case "chest":
                         if (!showSecrets) continue;
-                        color = new Color(2, 213, 250);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "chest"));
                         break;
                     case "item":
                         if (!showSecrets) continue;
-                        color = new Color(2, 64, 250);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "item"));
                         break;
                     case "bat":
                         if (!showSecrets) continue;
-                        color = new Color(142, 66, 0);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "bat"));
                         break;
                     case "wither":
                         if (!showSecrets) continue;
-                        color = new Color(30, 30, 30);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "wither"));
                         break;
                     case "lever":
                         if (!showSecrets) continue;
-                        color = new Color(250, 217, 2);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "lever"));
                         break;
                     case "fairysoul":
                         if (!showFairySouls) continue;
-                        color = new Color(255, 85, 255);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "fairysoul"));
                         break;
                     case "stonk":
                         if (!showStonk) continue;
-                        color = new Color(146, 52, 235);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "stonk"));
                         break;
                     default:
-                        color = new Color(190, 255, 252);
+                        // color = new Color(102, 0, 204);
+                        color = Color.decode(ConfigHandler.getString("waypoint_colors", "default"));
                 }
 
                 double viewerX = viewer.lastTickPosX + (viewer.posX - viewer.lastTickPosX) * event.partialTicks;
